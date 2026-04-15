@@ -1,1 +1,1 @@
-# kozy-program
+# panelka-program

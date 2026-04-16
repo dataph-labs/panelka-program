@@ -1,4 +1,13 @@
 use pyo3::prelude::*;
+use colored::*;
+
+fn printok (msg: &str) {
+    println!("{} {}", msg, "[OK]".green().bold());
+}
+
+fn printerr (msg: &str) {
+    println!("{} {}", msg, "[ERROR]".red().bold());
+}
 
 fn main() -> PyResult<()> {
     println!("Hello, world! By Rust!");
@@ -15,10 +24,21 @@ fn main() -> PyResult<()> {
         let msg: String = hello_msg.extract()?;
         println!("{}", msg);
 
+        println!("Start link tests...");
+
+        match msg.as_str() {
+            "Done." => printok("hellotest"),
+            _ => printerr("hellotest"),
+        }
+
         // Canculate test
-        //let result = my_module.call_method1("calculate", (3, 4))?;
-        //let value: i32 = result.extract()?;
-        //println!("Python result: {}", value);
+        let libtest = test_module.call_method1("calculate", (3, 4))?;
+        let value: f32 = libtest.extract()?;
+
+        match value {
+            5.0 => printok("pylibtest"),
+            _ => printerr("pylibtest"),
+        }
         Ok(())
     })
 }

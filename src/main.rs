@@ -1,4 +1,4 @@
-use pyo3::prelude::*;
+﻿use pyo3::prelude::*;
 use colored::*;
 
 fn printok (msg: &str) {
@@ -28,7 +28,7 @@ fn main() -> PyResult<()> {
 
         match msg.as_str() {
             "Done." => printok("hellotest"),
-            _ => printerr("hellotest"),
+                   _ => printerr("hellotest"),
         }
 
         // Canculate test
@@ -37,8 +37,11 @@ fn main() -> PyResult<()> {
 
         match value {
             5.0 => printok("pylibtest"),
-            _ => printerr("pylibtest"),
+                   _ => printerr("pylibtest"),
         }
+
+        test_module.call_method1("test_pyvista", ())?;
+
         Ok(())
     })
 }

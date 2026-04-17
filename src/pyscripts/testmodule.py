@@ -1,4 +1,9 @@
 import math
+from pyvista import examples
+
+def test_pyvista()
+    mesh = examples.download_aero_bracket()
+    mesh.plot()
 
 # testmodule.py
 def calculate(a, b):

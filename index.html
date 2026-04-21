@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>panelka-app</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body class="h-screen bg-gray-100 m-0">
+    <div class="h-full flex flex-col">
+
+      <!-- Верхнее меню -->
+      <header class="h-10 bg-gray-300 text-black flex items-center px-4 shrink-0">
+        Верхнее меню
+      </header>
+
+      <!-- Основная область -->
+      <main class="flex-1 flex overflow-hidden">
+
+        <!-- Консоль и ФС -->
+        <aside class="w-64 flex flex-col bg-white border-r border-gray-300 shrink-0">
+          <div class="flex-1 border-b border-gray-300 p-4 overflow-auto">Консоль</div>
+          <div class="flex-1 p-4 overflow-auto">Файловая система</div>
+        </aside>
+
+        <!-- Правая часть -->
+        <section class="flex-1 flex flex-col min-w-0">
+
+          <!-- Область вьюпорта -->
+          <div class="flex-1 flex">
+            <div class="w-10 bg-gray-200 border-r border-gray-300 flex items-center justify-center text-xs font-medium shrink-0">
+              Вкладки
+            </div>
+            <div class="flex-1 bg-gray-50 p-4 overflow-auto">
+              Вьюпорт
+            </div>
+          </div>
+
+          <!-- Нижние панели -->
+          <div class="h-64 flex bg-white border-t border-gray-300">
+            <div class="flex-1 p-4 border-r border-gray-300 overflow-auto">Инспектор</div>
+            <div class="w-10 bg-gray-200 border-r border-gray-300 flex items-center justify-center text-xs font-medium shrink-0">
+              Вкладки инсп.
+            </div>
+            <div class="flex-1 p-4 overflow-auto">Инструменты</div>
+          </div>
+
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
